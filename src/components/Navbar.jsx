@@ -11,11 +11,11 @@ const Navbar = () => {
 
     return (
         <nav className="relative z-50 w-full px-6 py-6 flex justify-between items-center max-w-7xl mx-auto">
-            <Link to="/" className="relative flex items-center z-50 md:w-48">
+            <Link to="/" className="relative flex items-center w-20 md:w-48 z-50">
                 <img
                     src="/images/logos/softart.png"
                     alt="SoftArtStudios Logo"
-                    className="h-16 w-auto object-contain md:absolute md:top-1/2 md:-left-24 md:-translate-y-1/2 md:h-120 md:max-w-none"
+                    className="absolute top-1/2 -left-12 -translate-y-1/2 h-40 md:-left-32 md:h-[30rem] w-auto max-w-none object-contain"
                 />
             </Link>
 
@@ -32,6 +32,12 @@ const Navbar = () => {
                     className={`hover:text-primary transition-colors ${isActive('/hakkimizda') ? 'text-primary' : ''}`}
                 >
                     Hakkımızda
+                </Link>
+                <Link
+                    to="/urunlerimiz"
+                    className={`hover:text-primary transition-colors ${isActive('/urunlerimiz') ? 'text-primary' : ''}`}
+                >
+                    Ürünlerimiz
                 </Link>
                 <Link
                     to="/hizmetler"
@@ -59,13 +65,13 @@ const Navbar = () => {
                         {isDark ? 'light_mode' : 'dark_mode'}
                     </span>
                 </button>
-                <Link
-                    to="/#iletisim"
+                <a
+                    href="/#iletisim"
                     className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-secondary transition-colors shadow-lg shadow-primary/30 flex items-center gap-2"
                 >
                     Projenizi Başlatalım
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
+                </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -105,6 +111,13 @@ const Navbar = () => {
                         Hakkımızda
                     </Link>
                     <Link
+                        to="/urunlerimiz"
+                        className={`py-2 ${isActive('/urunlerimiz') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Ürünlerimiz
+                    </Link>
+                    <Link
                         to="/hizmetler"
                         className={`py-2 ${isActive('/hizmetler') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
                         onClick={() => setIsMenuOpen(false)}
@@ -120,14 +133,14 @@ const Navbar = () => {
                     </Link>
                     <a className="text-gray-600 dark:text-gray-300 hover:text-primary py-2" href="/#iletisim" onClick={() => setIsMenuOpen(false)}>İletişim</a>
                     <div className="h-px bg-gray-200 dark:bg-gray-700 my-2"></div>
-                    <Link
-                        to="/#iletisim"
+                    <a
+                        href="/#iletisim"
                         className="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold text-center flex items-center justify-center gap-2"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Projenizi Başlatalım
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                    </Link>
+                    </a>
                 </div>
             )}
         </nav>

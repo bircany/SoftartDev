@@ -1,7 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
+    const [activeTab, setActiveTab] = useState('tech');
+
+    const techServices = [
+        {
+            icon: "code",
+            title: "Web Geliştirme",
+            desc: "Next.js ve React ile modern, SEO uyumlu ve performanslı web siteleri.",
+            color: "text-primary",
+            gradient: "from-primary/20 to-primary/5",
+            hoverCheck: "group-hover:translate-x-1"
+        },
+        {
+            icon: "smartphone",
+            title: "Mobil Uygulama",
+            desc: "iOS ve Android için native kalitede cross-platform mobil uygulamalar.",
+            color: "text-blue-400",
+            gradient: "from-blue-500/20 to-blue-500/5",
+            hoverCheck: "group-hover:translate-x-1"
+        },
+        {
+            icon: "smart_toy",
+            title: "Yapay Zeka & Veri",
+            desc: "İş süreçlerinizi optimize eden yapay zeka çözümleri ve veri analitiği.",
+            color: "text-emerald-400",
+            gradient: "from-emerald-500/20 to-emerald-500/5",
+            hoverCheck: "group-hover:translate-x-1"
+        }
+    ];
+
+    const mediaServices = [
+        {
+            icon: "movie",
+            title: "Video Prodüksiyon",
+            desc: "Tanıtım filmleri, reklam kurguları ve profesyonel video içerik üretimi.",
+            color: "text-red-500",
+            gradient: "from-red-500/20 to-red-500/5",
+            hoverCheck: "group-hover:translate-x-1"
+        },
+        {
+            icon: "share",
+            title: "Sosyal Medya",
+            desc: "Markanızın dijital varlığını güçlendiren stratejik sosyal medya yönetimi.",
+            color: "text-purple-500",
+            gradient: "from-purple-500/20 to-purple-500/5",
+            hoverCheck: "group-hover:translate-x-1"
+        },
+        {
+            icon: "palette",
+            title: "Marka & Tasarım",
+            desc: "Kurumsal kimlik, logo tasarımı ve UX/UI tasarım hizmetleri.",
+            color: "text-orange-500",
+            gradient: "from-orange-500/20 to-orange-500/5",
+            hoverCheck: "group-hover:translate-x-1"
+        }
+    ];
+
+    const currentServices = activeTab === 'tech' ? techServices : mediaServices;
+
     return (
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] px-6 max-w-7xl mx-auto text-center pb-32 pt-20">
             <div className="max-w-5xl animate-fade-in-up">
@@ -37,11 +95,24 @@ const Hero = () => {
 
                 {/* Tabs */}
                 <div className="flex flex-wrap justify-center gap-3 mb-8">
-                    <div className="bg-white/5 p-1 rounded-full border border-white/10 flex">
-                        <button className="px-6 py-2 rounded-full bg-white/10 text-white font-medium shadow-sm border border-white/5 transition-all">
+                    <div className="bg-gray-100 dark:bg-white/5 p-1 rounded-full border border-gray-200 dark:border-white/10 flex relative">
+                        {/* Active Background Animation can be added here if needed */}
+                        <button
+                            onClick={() => setActiveTab('tech')}
+                            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeTab === 'tech'
+                                ? 'bg-white dark:bg-white/10 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-white/5'
+                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                                }`}
+                        >
                             Yazılım & Teknoloji
                         </button>
-                        <button className="px-6 py-2 rounded-full text-gray-400 font-medium hover:text-white transition-all">
+                        <button
+                            onClick={() => setActiveTab('media')}
+                            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeTab === 'media'
+                                ? 'bg-white dark:bg-white/10 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-white/5'
+                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                                }`}
+                        >
                             Medya & Kreatif
                         </button>
                     </div>
@@ -49,41 +120,23 @@ const Hero = () => {
 
                 {/* Service Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Link to="/hizmetler" className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 text-left">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <span className="material-symbols-outlined text-primary text-xl">code</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-white mb-2">Web Geliştirme</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">Next.js ve React ile modern, SEO uyumlu ve performanslı web siteleri.</p>
-                        <div className="flex items-center gap-2 text-primary text-sm font-medium">
-                            <span>Detaylar</span>
-                            <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </div>
-                    </Link>
-
-                    <Link to="/hizmetler" className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 text-left">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <span className="material-symbols-outlined text-blue-400 text-xl">smartphone</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-white mb-2">Mobil Uygulama</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">iOS ve Android için native kalitede cross-platform mobil uygulamalar.</p>
-                        <div className="flex items-center gap-2 text-blue-400 text-sm font-medium">
-                            <span>Detaylar</span>
-                            <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </div>
-                    </Link>
-
-                    <Link to="/hizmetler" className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 text-left">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <span className="material-symbols-outlined text-emerald-400 text-xl">smart_toy</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-white mb-2">Yapay Zeka & Veri</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">İş süreçlerinizi optimize eden yapay zeka çözümleri ve veri analitiği.</p>
-                        <div className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
-                            <span>Detaylar</span>
-                            <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </div>
-                    </Link>
+                    {currentServices.map((service, index) => (
+                        <Link
+                            key={index}
+                            to="/hizmetler"
+                            className="group relative bg-white dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl p-6 hover:shadow-xl dark:hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 text-left"
+                        >
+                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                                <span className={`material-symbols-outlined ${service.color} text-xl`}>{service.icon}</span>
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{service.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">{service.desc}</p>
+                            <div className={`flex items-center gap-2 ${service.color} text-sm font-medium`}>
+                                <span>Detaylar</span>
+                                <span className={`material-symbols-outlined text-sm transition-transform ${service.hoverCheck}`}>arrow_forward</span>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
 

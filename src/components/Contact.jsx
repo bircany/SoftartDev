@@ -27,15 +27,15 @@ const Contact = () => {
                         </p>
 
                         <div className="space-y-4">
-                            <a href="tel:+905347665616" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
+                            <a href="https://wa.me/905347665616" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
                                 <span className="w-12 h-12 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                                    <span className="material-symbols-outlined text-primary">call</span>
+                                    <span className="material-symbols-outlined text-primary">chat</span>
                                 </span>
                                 +90 534 766 56 16
                             </a>
-                            <a href="tel:+905530359119" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
+                            <a href="https://wa.me/905530359119" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
                                 <span className="w-12 h-12 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                                    <span className="material-symbols-outlined text-primary">call</span>
+                                    <span className="material-symbols-outlined text-primary">chat</span>
                                 </span>
                                 +90 553 035 91 19
                             </a>
@@ -80,11 +80,11 @@ const Contact = () => {
                 <div className="pt-8 border-t border-gray-200 dark:border-white/10">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Logo */}
-                        <div className="flex items-center gap-2">
+                        <div className="relative flex items-center gap-2 w-48">
                             <img
                                 src="/images/logos/softart.png"
                                 alt="SoftArtStudios Logo"
-                                className="h-12 w-auto object-contain"
+                                className="absolute left-0 -top-20 md:-top-32 h-40 md:h-80 w-auto max-w-none object-contain"
                             />
                         </div>
 
@@ -94,7 +94,7 @@ const Contact = () => {
                             <Link to="/hakkimizda" className="hover:text-primary transition-colors">Hakkımızda</Link>
                             <Link to="/projeler" className="hover:text-primary transition-colors">Projeler</Link>
                             <Link to="/hizmetler" className="hover:text-primary transition-colors">Hizmetler</Link>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1">
+                            <a href="https://www.instagram.com/softartstudios/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1">
                                 <span className="material-symbols-outlined text-base">photo_camera</span>
                                 Instagram
                             </a>

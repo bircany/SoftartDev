@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import SoftReservePage from './pages/SoftReservePage';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<AboutPage />} />
+        <Route path="/urunlerimiz" element={<ProductsPage />} />
         <Route path="/projeler" element={<ProjectsPage />} />
         <Route path="/hizmetler" element={<ServicesPage />} />
         <Route path="/softreserve" element={<SoftReservePage />} />

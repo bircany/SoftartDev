@@ -62,14 +62,13 @@ const About = () => {
             </div>
 
             {/* Client Marquee */}
-            <div className="relative overflow-hidden py-8 border-t border-b border-gray-200 dark:border-white/10">
-                <div className="flex animate-marquee whitespace-nowrap">
+            <div className="relative overflow-hidden py-10 border-y border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5">
+                <div className="flex animate-marquee whitespace-nowrap items-center">
                     {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
-                        <div key={index} className="mx-12 flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                                <span className="text-primary font-bold text-sm">{client.charAt(0)}</span>
-                            </div>
-                            <span className="text-gray-600 dark:text-gray-400 font-medium text-sm whitespace-nowrap">{client}</span>
+                        <div key={index} className="mx-12">
+                            <span className="text-xl md:text-2xl font-display font-bold text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors duration-300 cursor-default">
+                                {client}
+                            </span>
                         </div>
                     ))}
                 </div>
