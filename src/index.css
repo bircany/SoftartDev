@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .brush-stroke {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        padding: 0 0.5em;
+    }
+
+    .brush-stroke::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 10%;
+        left: -5px;
+        right: -5px;
+        bottom: 5%;
+        background-color: #7C3AED;
+        transform: skew(-2deg) rotate(-1deg);
+        border-radius: 4px;
+        clip-path: polygon(0% 10%, 2% 0%, 5% 5%, 8% 0%, 12% 8%, 15% 2%, 20% 8%, 25% 1%, 30% 6%, 35% 0%, 40% 7%, 45% 2%, 50% 9%, 55% 1%, 60% 7%, 65% 2%, 70% 8%, 75% 1%, 80% 7%, 85% 2%, 90% 8%, 95% 1%, 100% 9%,
+                98% 90%, 95% 100%, 92% 95%, 88% 98%, 85% 92%, 80% 98%, 75% 90%, 70% 98%, 65% 93%, 60% 99%, 55% 92%, 50% 98%, 45% 93%, 40% 99%, 35% 92%, 30% 98%, 25% 92%, 20% 97%, 15% 91%, 10% 98%, 5% 92%, 2% 98%, 0% 90%);
+        opacity: 0.85;
+    }
+
+    .grid-bg {
+        background-size: 50px 50px;
+        mask-image: linear-gradient(to bottom, transparent, 10% white, 90% white, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, 5% black, 80% black, transparent);
+    }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6D28D9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8B5CF6;
+}
