@@ -81,8 +81,11 @@ const Contact = () => {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Logo */}
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">S</div>
-                            <span className="text-xl font-display font-bold tracking-tight text-gray-900 dark:text-white">SoftArtStudios</span>
+                            <img
+                                src="/images/logos/softart.png"
+                                alt="SoftArtStudios Logo"
+                                className="h-12 w-auto object-contain"
+                            />
                         </div>
 
                         {/* Links */}

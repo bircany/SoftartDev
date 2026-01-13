@@ -11,11 +11,11 @@ const Navbar = () => {
 
     return (
         <nav className="relative z-50 w-full px-6 py-6 flex justify-between items-center max-w-7xl mx-auto">
-            <Link to="/" className="relative flex items-center w-48 z-50">
+            <Link to="/" className="relative flex items-center z-50 md:w-48">
                 <img
                     src="/images/logos/softart.png"
                     alt="SoftArtStudios Logo"
-                    className="absolute top-1/2 -left-24 -translate-y-1/2 h-120 w-auto max-w-none object-contain"
+                    className="h-16 w-auto object-contain md:absolute md:top-1/2 md:-left-24 md:-translate-y-1/2 md:h-120 md:max-w-none"
                 />
             </Link>
 
