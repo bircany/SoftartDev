@@ -33,23 +33,50 @@ const Navbar = () => {
                 >
                     Hakkımızda
                 </Link>
-                <Link
-                    to="/urunlerimiz"
-                    className={`hover:text-primary transition-colors ${isActive('/urunlerimiz') ? 'text-primary' : ''}`}
-                >
-                    Ürünlerimiz
-                </Link>
+                <div className="relative group">
+                    <Link
+                        to="/urunlerimiz"
+                        className={`hover:text-primary transition-colors flex items-center gap-1 ${isActive('/urunlerimiz') ? 'text-primary' : ''}`}
+                    >
+                        Ürünlerimiz
+                        <span className="material-symbols-outlined text-sm pt-0.5 transition-transform group-hover:rotate-180">expand_more</span>
+                    </Link>
+
+                    {/* Desktop Dropdown */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-72">
+                        <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-xl border border-gray-100 dark:border-white/10 p-2 overflow-hidden">
+                            {[
+                                { name: 'SoftBeauty', desc: 'Güzellik Merkezi Yönetimi', link: '/softbeauty', icon: 'face', color: 'text-pink-500', bg: 'bg-pink-500/10' },
+                                { name: 'HorecaPOS', desc: 'Adisyon & POS Sistemi', link: '/horecapos', icon: 'point_of_sale', color: 'text-orange-500', bg: 'bg-orange-500/10' },
+                                { name: 'SoftReserve', desc: 'Restoranlar İçin Rezervasyon', link: '/softreserve', icon: 'calendar_month', color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
+                                { name: 'Tüm Ürünler', desc: 'Tüm çözümlerimizi inceleyin', link: '/urunlerimiz', icon: 'apps', color: 'text-primary', bg: 'bg-primary/10' }
+                            ].map((item, idx) => (
+                                <Link
+                                    key={idx}
+                                    to={item.link}
+                                    className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group/item"
+                                >
+                                    <div className={`w-10 h-10 rounded-lg ${item.bg} ${item.color} flex items-center justify-center`}>
+                                        <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                                    </div>
+                                    <div>
+                                        <div className="font-semibold text-gray-900 dark:text-white text-sm group-hover/item:text-primary transition-colors">
+                                            {item.name}
+                                        </div>
+                                        <div className="text-xs text-gray-500 dark:text-gray-400">
+                                            {item.desc}
+                                        </div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
                 <Link
                     to="/hizmetler"
                     className={`hover:text-primary transition-colors ${isActive('/hizmetler') ? 'text-primary' : ''}`}
                 >
                     Hizmetler
-                </Link>
-                <Link
-                    to="/projeler"
-                    className={`hover:text-primary transition-colors ${isActive('/projeler') ? 'text-primary' : ''}`}
-                >
-                    Projeler
                 </Link>
                 <a className="hover:text-primary transition-colors" href="/#iletisim">İletişim</a>
             </div>
@@ -95,7 +122,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
-                <div className="absolute top-full left-0 w-full bg-white dark:bg-surface-dark shadow-lg py-4 px-6 md:hidden flex flex-col gap-4 border-t border-gray-100 dark:border-white/10">
+                <div className="absolute top-full left-0 w-full bg-white dark:bg-surface-dark shadow-lg py-4 px-6 md:hidden flex flex-col gap-4 border-t border-gray-100 dark:border-white/10 max-h-[80vh] overflow-y-auto">
                     <Link
                         to="/"
                         className={`py-2 ${isActive('/') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
@@ -110,26 +137,52 @@ const Navbar = () => {
                     >
                         Hakkımızda
                     </Link>
-                    <Link
-                        to="/urunlerimiz"
-                        className={`py-2 ${isActive('/urunlerimiz') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Ürünlerimiz
-                    </Link>
+
+                    {/* Mobile Products Submenu */}
+                    <div className="py-2">
+                        <div className="text-gray-900 dark:text-white font-medium mb-3">Ürünlerimiz</div>
+                        <div className="pl-4 flex flex-col gap-3 border-l-2 border-gray-100 dark:border-white/10">
+                            <Link
+                                to="/softbeauty"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary text-sm flex items-center gap-2"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <span className="material-symbols-outlined text-base">face</span>
+                                SoftBeauty
+                            </Link>
+                            <Link
+                                to="/horecapos"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary text-sm flex items-center gap-2"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <span className="material-symbols-outlined text-base">point_of_sale</span>
+                                HorecaPOS
+                            </Link>
+                            <Link
+                                to="/softreserve"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary text-sm flex items-center gap-2"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <span className="material-symbols-outlined text-base">calendar_month</span>
+                                SoftReserve
+                            </Link>
+                            <Link
+                                to="/urunlerimiz"
+                                className="text-gray-600 dark:text-gray-400 hover:text-primary text-sm flex items-center gap-2 font-medium"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <span className="material-symbols-outlined text-base">apps</span>
+                                Tüm Ürünler
+                            </Link>
+                        </div>
+                    </div>
+
                     <Link
                         to="/hizmetler"
                         className={`py-2 ${isActive('/hizmetler') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Hizmetler
-                    </Link>
-                    <Link
-                        to="/projeler"
-                        className={`py-2 ${isActive('/projeler') ? 'text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary'}`}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Projeler
                     </Link>
                     <a className="text-gray-600 dark:text-gray-300 hover:text-primary py-2" href="/#iletisim" onClick={() => setIsMenuOpen(false)}>İletişim</a>
                     <div className="h-px bg-gray-200 dark:bg-gray-700 my-2"></div>

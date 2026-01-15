@@ -27,17 +27,11 @@ const Contact = () => {
                         </p>
 
                         <div className="space-y-4">
-                            <a href="https://wa.me/905347665616" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
+                            <a href="https://wa.me/905514614655" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
                                 <span className="w-12 h-12 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                                     <span className="material-symbols-outlined text-primary">chat</span>
                                 </span>
-                                +90 534 766 56 16
-                            </a>
-                            <a href="https://wa.me/905530359119" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
-                                <span className="w-12 h-12 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                                    <span className="material-symbols-outlined text-primary">chat</span>
-                                </span>
-                                +90 553 035 91 19
+                                +90 551 461 46 55
                             </a>
                             <a href="mailto:info@softartstudios.com" className="flex items-center gap-4 text-gray-900 dark:text-white hover:text-primary transition-colors group">
                                 <span className="w-12 h-12 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Chatbot from './Chatbot';
 
 const Layout = ({ children }) => {
     return (
@@ -40,6 +41,8 @@ const Layout = ({ children }) => {
             {/* Bottom Background Blobs */}
             <div className="fixed bottom-[-100px] right-[-50px] w-64 h-64 bg-primary/40 rounded-full blur-3xl pointer-events-none z-0"></div>
             <div className="fixed bottom-[-50px] left-[-50px] w-96 h-64 bg-secondary/20 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+            <Chatbot />
         </div>
     );
 };

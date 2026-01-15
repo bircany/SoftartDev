@@ -71,58 +71,46 @@ const ServicesPage = () => {
 
                         {/* Sosyal Medya Section */}
                         <section id="sosyal-medya" className="group">
-                            <div className="flex flex-col md:flex-row items-center gap-12">
-                                <div className="md:w-1/2">
-                                    <div className="relative rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-pink-500/20 transition-all duration-500">
-                                        <img
-                                            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000"
-                                            alt="Social Media Management"
-                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/30 to-purple-500/30 mix-blend-overlay"></div>
-                                    </div>
+                            <div className="max-w-3xl">
+                                <div className="w-16 h-16 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-6">
+                                    <span className="material-symbols-outlined text-4xl">share</span>
                                 </div>
-                                <div className="md:w-1/2">
-                                    <div className="w-16 h-16 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl">share</span>
-                                    </div>
-                                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                                        Sosyal Medya Yönetimi
-                                    </h2>
-                                    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
-                                        Markanızın sosyal medyadaki sesini buluyoruz. Stratejik içerik planlaması, etkileşim yönetimi ve kreatif tasarımlarla takipçi kitlenizi sadık müşterilere dönüştürüyoruz.
-                                    </p>
+                                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                                    Sosyal Medya Yönetimi
+                                </h2>
+                                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+                                    Markanızın sosyal medyadaki sesini buluyoruz. Stratejik içerik planlaması, etkileşim yönetimi ve kreatif tasarımlarla takipçi kitlenizi sadık müşterilere dönüştürüyoruz.
+                                </p>
 
-                                    <div className="space-y-4">
-                                        {[
-                                            {
-                                                title: "İçerik Stratejisi ve Yönetimi",
-                                                desc: "Hedef kitlenize uygun, etkileşimi artıran düzenli içerik planlaması."
-                                            },
-                                            {
-                                                title: "Reels ve TikTok Prodüksiyonu",
-                                                desc: "Trendlere uygun, viral potansiyeli yüksek kısa dikey videolar."
-                                            },
-                                            {
-                                                title: "Topluluk Yönetimi",
-                                                desc: "Yorum ve mesaj yönetimi ile takipçilerinizle sürekli iletişim."
-                                            },
-                                            {
-                                                title: "Influencer Marketing",
-                                                desc: "Markanıza uygun influencer işbirlikleri ile erişiminizi artırın."
-                                            }
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex gap-4">
-                                                <div className="w-8 h-8 rounded-full bg-pink-100 dark:bg-pink-500/20 text-pink-500 shrink-0 flex items-center justify-center mt-1">
-                                                    <span className="material-symbols-outlined text-sm">done</span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-gray-900 dark:text-white">{item.title}</h4>
-                                                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
-                                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {[
+                                        {
+                                            title: "İçerik Stratejisi ve Yönetimi",
+                                            desc: "Hedef kitlenize uygun, etkileşimi artıran düzenli içerik planlaması."
+                                        },
+                                        {
+                                            title: "Reels ve TikTok Prodüksiyonu",
+                                            desc: "Trendlere uygun, viral potansiyeli yüksek kısa dikey videolar."
+                                        },
+                                        {
+                                            title: "Topluluk Yönetimi",
+                                            desc: "Yorum ve mesaj yönetimi ile takipçilerinizle sürekli iletişim."
+                                        },
+                                        {
+                                            title: "Influencer Marketing",
+                                            desc: "Markanıza uygun influencer işbirlikleri ile erişiminizi artırın."
+                                        }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex gap-4 p-4 bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+                                            <div className="w-8 h-8 rounded-full bg-pink-100 dark:bg-pink-500/20 text-pink-500 shrink-0 flex items-center justify-center">
+                                                <span className="material-symbols-outlined text-sm">done</span>
                                             </div>
-                                        ))}
-                                    </div>
+                                            <div>
+                                                <h4 className="font-bold text-gray-900 dark:text-white">{item.title}</h4>
+                                                <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </section>

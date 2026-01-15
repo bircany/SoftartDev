@@ -10,6 +10,36 @@ const Projects = () => {
 
     const projects = [
         {
+            title: "Backline Website",
+            desc: "Profesyonel müzik ve etkinlik ekipmanları kiralama hizmeti sunan Backline için modern ve etkileyici kurumsal web sitesi.",
+            fullDesc: "Backline için tasarladığımız bu kurumsal web sitesi, müzik ve etkinlik sektöründe profesyonel bir imaj oluşturur. Ekipman kataloğu, hizmet detayları ve kolay iletişim özellikleriyle donatılmıştır. Modern tasarım ve hızlı performans ile müşteri deneyimini üst seviyeye taşır.",
+            gradient: "from-purple-600 to-indigo-600",
+            category: "Kurumsal Web Sitesi",
+            url: "#",
+            features: ["Modern Tasarım", "Ekipman Kataloğu", "Hızlı Performans", "İletişim Formu"],
+            image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            title: "Sivas Iron Metal",
+            desc: "Metal sanayi sektöründe faaliyet gösteren Sivas Iron Metal için kurumsal ve güven veren web sitesi.",
+            fullDesc: "Sivas Iron Metal için geliştirdiğimiz bu kurumsal web sitesi, şirketin sanayi sektöründeki güçlü konumunu yansıtır. Ürün portföyü, üretim kapasitesi ve kalite standartları gibi bilgileri etkileyici bir şekilde sunar. SEO uyumlu yapısı ile arama motorlarında üst sıralarda yer alır.",
+            gradient: "from-gray-700 to-zinc-800",
+            category: "Kurumsal Web Sitesi",
+            url: "#",
+            features: ["Kurumsal Kimlik", "Ürün Kataloğu", "SEO Uyumlu", "Responsive Tasarım"],
+            image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            title: "Haber Sitesi",
+            desc: "Güncel haberleri hızlı ve etkili bir şekilde sunan modern haber portalı tasarımı.",
+            fullDesc: "Modern bir haber portalı olarak tasarlanan bu site, kullanıcıların güncel haberlere hızlıca erişmesini sağlar. Kategori bazlı haberler, son dakika bölümü, arama fonksiyonu ve sosyal medya entegrasyonu ile donatılmıştır. Hızlı yüklenen ve mobil uyumlu yapısı ile her cihazda mükemmel deneyim sunar.",
+            gradient: "from-red-600 to-rose-600",
+            category: "Haber Portalı",
+            url: "#",
+            features: ["Haber Yönetim Sistemi", "Kategori Yapısı", "Mobil Uyumlu", "Hızlı Yükleme"],
+            image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800"
+        },
+        {
             title: "Mimar'lar için Pörtföy sitesi",
             desc: "Profesyonel mimarlar için özel tasarlanmış portföy web siteleri. Projelerinizi etkileyici bir şekilde sergileyin.",
             fullDesc: "Mimarlar için tasarladığımız bu portföy sitesi, projelerinizi görsel açıdan etkileyici bir şekilde sergilemenizi sağlar. Modern tasarım, responsive yapı ve SEO uyumlu altyapı ile müşterilerinize ulaşmanızı kolaylaştırır. Proje galerileri, hizmet sayfaları ve iletişim formu dahildir.",

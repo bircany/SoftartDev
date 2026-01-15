@@ -29,7 +29,10 @@ const About = () => {
         "Detay Oto Market",
         "Deko Plastik",
         "Mengerler Samsun Mercedes Benz Bayi",
-        "Öküz Samsun"
+        "Öküz Samsun",
+        "Smy Dunnage",
+        "Eko Sentetik",
+        "22 Ocakbaşı"
     ];
 
     return (
